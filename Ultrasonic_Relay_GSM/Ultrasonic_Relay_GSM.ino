@@ -14,8 +14,8 @@ int RelayPin = 4;
 #define stop_distance 200
 
 // Danger Water Level
-#define MIN_DISTANCE 25  // Minimum distance in centimeters
-#define MAX_DISTANCE 30  // Maximum distance in centimeters
+#define MIN_DISTANCE 5  // Minimum distance in centimeters
+#define MAX_DISTANCE 25  // Maximum distance in centimeters
 
 unsigned long eventInterval = 1000;
 unsigned long previousTime1 = 0;
@@ -70,7 +70,7 @@ void read_distance()
   SIM900A.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
   delay(1000);
   Serial.println ("Set SMS Number");
-  SIM900A.println("AT+CMGS=\"+60189701593\"\r"); //Mobile phone number to send message
+  SIM900A.println("AT+CMGS=\"+60193609872\"\r"); //Mobile phone number to send message
   delay(1000);
   Serial.println ("Set SMS Content");
   SIM900A.println("EMERGENCY ALERT:Dangerous water levels detected in your area. Please evacuate to higher ground NOW. Your safety is our priority. Keep your loved ones informed");// Messsage content
